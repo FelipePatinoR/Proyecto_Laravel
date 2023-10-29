@@ -15,7 +15,7 @@ class FacultadesSeeder extends Seeder
     public function run(): void
     {
         //
-        $datos =[
+        $facultades =[
             [
             'codfacultad' => '10',
             'nomfacultad' => 'Artes'
@@ -37,6 +37,6 @@ class FacultadesSeeder extends Seeder
                 'nomfacultad' => 'Ciencias Humanas'
             ]
         ];
-        DB::table('facultades')->insert($datos);
+        DB::table('facultades')->insert($facultades);
     }
 }
