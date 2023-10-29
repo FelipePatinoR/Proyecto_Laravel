@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ciudades', function (Blueprint $table) {
-            $table->string('codciudad', 5);
-            $table->string('nomciudad', 100);
-            $table->string('departamento', 2);
+        Schema::create('barrios', function (Blueprint $table) {
+            $table->string('codbarrio', 3);
+            $table->string('nombarrio', 100);
+            $table->integer('estbarrio');
+            $table->integer('comuna');
+
             $table->timestamps();
-            $table->primary('codciudad');
-            $table->foreign('departamento')->references('coddepto')->on('departamentos');
+            $table->primary('codbarrio');
+
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ciudades');
+        Schema::dropIfExists('barrios');
     }
 };
