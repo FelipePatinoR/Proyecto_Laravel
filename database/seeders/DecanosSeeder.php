@@ -40,6 +40,11 @@ class DecanosSeeder extends Seeder
                 'coddecano' => '51',
                 'nomdecano' => 'Carlos Sánchez',
                 'facultad' => '50'
+            ],
+            [
+                'coddecano' => '61',
+                'nomdecano' => 'Julian Salazar',
+                'facultad' => '60'
             ]
         ];
         DB::table('decanos')->insert($decanos);

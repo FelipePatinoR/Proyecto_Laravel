@@ -29,4 +29,31 @@ class Facultades extends Controller
         return redirect()->route('listado_facultades');
 
     }
+
+    public function eliminar($id){
+
+        $facultad = FacultadesModel::findorFail($id);
+        $facultad -> delete();
+        return redirect()->route('listado_facultades');
+
+    }
+
+    public function form_editar($id)
+    {
+        $facultad = FacultadesModel::findorFail($id);
+        return view('facultades.form_editar', ['facultad' => $facultad]);
+
+    }
+
+    public function editar(Request $request, $id){
+
+        $facultad = FacultadesModel::findorFail($id);
+        $facultad -> nomfacultad = $request->input('editnomfacultad');
+        $facultad -> save();
+        return redirect(route('listado_facultades'));
+    }
+        
+
+    
+
 }

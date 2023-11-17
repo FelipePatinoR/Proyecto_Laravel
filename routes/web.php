@@ -9,11 +9,6 @@ use App\Http\Controllers\Materias;
 use App\Http\Controllers\Docentes;
 use App\Http\Controllers\Estudiantes;
 
-
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,6 +50,22 @@ Route::post(
     '/facultades/listado/registrar',
     [Facultades::class, 'registrar']
 )->middleware(['auth', 'verified'])->name('registrar_fac');
+
+
+Route::get(
+    '/facultades/editar/{id}',
+    [Facultades::class, 'form_editar']
+)->middleware(['auth', 'verified'])->name('form_editar_fac');
+
+Route::post(
+    '/facultades/editar/{id}',
+    [Facultades::class, 'editar']
+)->middleware(['auth', 'verified'])->name('editar_fac');
+
+Route::get(
+    '/facultades/eliminar/{id}',
+    [Facultades::class, 'eliminar']
+)->middleware(['auth', 'verified'])->name('eliminar_fac');
 
 
 Route::get(

@@ -29,8 +29,8 @@
                     <th scope="row" >{{$fac->codfacultad}}</th>
                     <td>{{$fac->nomfacultad}}</td>
                     <td>
-                        <button class="btn btn-success"><i class="far fa-edit"></i></button>
-                        <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                        <a  href="{{route('form_editar_fac', $fac->codfacultad)}}" class="btn btn-success"><i class="far fa-edit"></i></a>
+                        <a href="{{route('eliminar_fac', $fac->codfacultad)}}" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
                     </td>
                 </tr>
             @endforeach
